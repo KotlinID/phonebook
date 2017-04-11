@@ -11,7 +11,7 @@ services:
     volumes:
       - /var/mysql:/var/lib/mysql
   api:
-    image: phonebook-api:1.0
+    image: phonebook-api:latest
     container_name: phonebook-api
     environment:
       - SPRING_PROFILES_ACTIVE=docker
