@@ -21,6 +21,12 @@ class ContactController {
     @PostMapping("v1/contact/create")
     fun createContact(@RequestBody contact: Contact) = contactService.addContact(contact)
 
+    @PutMapping("v1/contact/update")
+    fun modifyContact(@RequestParam firstname: String, @RequestParam lastname: String, @RequestParam email: String, @RequestParam phonenumber: String, @RequestParam id: Long) = contactService.updateContact(firstname, lastname, email, phonenumber, id)
+
     @DeleteMapping("v1/contact/remove")
     fun removeContact(@RequestBody id: Long) = contactService.deleteContactById(id)
+
+    @DeleteMapping("v1/contact/remove/all")
+    fun clearContacts() = contactService.deleteAllContact()
 }
